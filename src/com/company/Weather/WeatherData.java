@@ -29,4 +29,15 @@ public class WeatherData implements Subject{
             observer.update(temperature, humidity, pressure);
         }
     }
+
+    public void mesurementChanged() {
+        notifyObservers();
+    }
+
+    public void setMesurement(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        mesurementChanged();
+    }
 }
